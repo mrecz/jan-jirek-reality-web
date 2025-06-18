@@ -1,0 +1,20 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import References from '@/components/references.tsx';
+import Hero from './hero.astro';
+import { getCollection, getEntries } from 'astro:content';
+
+const testimonials = await getCollection('references');
+export const metadata = {
+  title: 'Ing. Jan Jírek - Reference',
+  description: 'Reference od spokojených klientů Ing. Jana Jírka',
+};
+---
+
+<Layout
+  title="Ing. Jan Jírek - Reference"
+  description="Reference od spokojených klientů Ing. Jana Jírka"
+>
+  <Hero />
+  <References testimonials={testimonials} />
+</Layout>
