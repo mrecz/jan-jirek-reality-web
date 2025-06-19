@@ -13,6 +13,16 @@ const referencesCollection = defineCollection({
   }),
 });
 
+const aboutCollection = defineCollection({
+  loader: glob({ pattern: 'about.md', base: './src/content/general' }),
+  schema: z.object({
+    years: z.number(),
+    estates: z.number(),
+    clients: z.number(),
+  }),
+});
+
 export const collections = {
   references: referencesCollection,
+  about: aboutCollection,
 };

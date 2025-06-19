@@ -2,7 +2,7 @@
 import Layout from '@/layouts/Layout.astro';
 import References from '@/components/references.tsx';
 import Hero from './hero.astro';
-import { getCollection, getEntries } from 'astro:content';
+import { getCollection } from 'astro:content';
 
 const testimonials = await getCollection('references');
 export const metadata = {

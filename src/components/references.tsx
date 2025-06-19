@@ -16,23 +16,25 @@ export default function References({ testimonials }: ReferencesProps) {
 
   return (
     <section>
-      <div className="mx-auto max-w-6xl px-4 sm:px-6">
-        <div className="pb-12 md:pb-20">
-          {/* Testimonials grid */}
-          <div ref={masonryContainer} className="grid items-start gap-4 sm:grid-cols-3 md:gap-6">
-            {testimonials.map((testimonial, index) => (
-              <div key={index} className="group">
-                <TestimonialDetail
-                  testimonial={{
-                    fullname: testimonial.data.fullname,
-                  }}
-                  className="w-full"
-                  rotation={getRandomRotation()}
-                >
-                  {testimonial.data.content}
-                </TestimonialDetail>
-              </div>
-            ))}
+      <div className="bg-gradient-to-t from-gray-950/10 to-transparent">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6">
+          <div className="pb-12 md:pb-20">
+            {/* Testimonials grid */}
+            <div ref={masonryContainer} className="grid items-start gap-4 sm:grid-cols-3 md:gap-6">
+              {testimonials.map((testimonial, index) => (
+                <div key={index} className="group">
+                  <TestimonialDetail
+                    testimonial={{
+                      fullname: testimonial.data.fullname,
+                    }}
+                    className="w-full"
+                    rotation={getRandomRotation()}
+                  >
+                    {testimonial.data.content}
+                  </TestimonialDetail>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>

@@ -15,7 +15,7 @@ export default function TestimonialDetail({
 }) {
   const channelIcon = (channel: string) => {
     switch (channel) {
-      case "Twitter":
+      case 'Twitter':
         return (
           <svg
             className="fill-current"
@@ -30,7 +30,7 @@ export default function TestimonialDetail({
             />
           </svg>
         );
-      case "Google":
+      case 'Google':
         return (
           <svg
             className="fill-current"
@@ -42,7 +42,7 @@ export default function TestimonialDetail({
             <path d="M15.68 6.546H8.044v3.273h4.328c-.692 2.182-2.4 2.909-4.363 2.909a4.728 4.728 0 1 1 3.035-8.346l2.378-2.265A8 8 0 1 0 8.01 16.001c4.411 0 8.4-2.909 7.671-9.455Z"></path>
           </svg>
         );
-      case "YouTube":
+      case 'YouTube':
         return (
           <svg
             className="fill-current"
@@ -55,7 +55,7 @@ export default function TestimonialDetail({
           </svg>
         );
       default:
-        return "";
+        return '';
     }
   };
 
@@ -79,12 +79,12 @@ export default function TestimonialDetail({
           <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" />
           <circle cx="12" cy="7" r="4" />
         </svg>
-        <div className="font-bold">{testimonial.fullname}</div>
+        <div className="font-bold md:text-2xl">{testimonial.fullname}</div>
       </header>
-      <div className="grow text-sm text-gray-700">{children}</div>
+      <div className="grow text-sm text-gray-700 md:text-base">{children}</div>
       <footer className="mt-4 flex items-center gap-2.5 text-gray-700">
         {testimonial.channel && channelIcon(testimonial.channel)}
-        <div className="text-xs">{testimonial.date || ""}</div>
+        <div className="text-xs">{testimonial.date || ''}</div>
       </footer>
     </article>
   );

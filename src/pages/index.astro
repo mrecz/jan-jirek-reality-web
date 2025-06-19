@@ -1,19 +1,12 @@
 ---
 import Hero from '@/components/hero.astro';
 import ServicesOverview from '@/components/services-overview.astro';
-import Testimonials from '@/components/testimonials.tsx';
 import Layout from '../layouts/Layout.astro';
-import { getCollection } from 'astro:content';
-import { StaggerTestimonials } from '@/components/stagger-testemonials';
-
-const testimonials = await getCollection('references');
+import ReferencesOverview from '@/components/references-overview.astro';
 ---
 
 <Layout>
   <Hero />
   <ServicesOverview />
-  <Testimonials testimonials={testimonials} />
-  <div class="flex h-screen w-full items-center justify-center">
-    <StaggerTestimonials client:load />
-  </div>
+  <div class="w-full bg-slate-200"><ReferencesOverview /></div>
 </Layout>

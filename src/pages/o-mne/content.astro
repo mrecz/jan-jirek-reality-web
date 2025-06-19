@@ -1,6 +1,13 @@
 ---
 import Stats from '@/components/stats-about.astro';
 import { CldImage } from 'astro-cloudinary';
+
+import { render, getEntry } from 'astro:content';
+const about = await getEntry('about', 'about');
+if (!about) {
+  throw new Error('About entry not found');
+}
+const { headings, Content: AboutContent } = await render(about);
 ---
 
 <section class="relative mx-auto mb-8 max-w-7xl">
@@ -23,25 +30,8 @@ import { CldImage } from 'astro-cloudinary';
     <div class="mx-auto max-w-6xl px-4 sm:px-6">
       <div class="pb-12 md:pb-20">
         <div class="mx-auto max-w-3xl">
-          <div class="text-lg text-slate-500">
-            <h2 class="h3 mb-4 font-cabinet-grotesk text-slate-800">O mně</h2>
-            <p class="mb-8">
-              Jmenuji se Jan Jírek a na trhu s nemovitostmi se pohybuji od roku 2012, kdy ještě jako
-              student vysoké školy jsem hledal práci, která nebude jen o penězích,{' '}
-              <strong class="font-medium text-slate-800">
-                ale hlavně o možnosti se někam posunout.
-              </strong>{' '}
-            </p>
-            <p class="mb-8">
-              Postupnou prací jsem se naučil, že kvalitně odvedená realitní služba stojí na lidském
-              přístupu, znalostech a vybudování pocitu důvěry.
-            </p>
-            <p class="mb-8">
-              Právě Vámi projevená důvěra, je pro mne velmi důležitou zpětnou vazbou, že to, co
-              dělám, dělám správně.
-            </p>
-            <p class="mb-8">Bude mi ctí, pokud budu mít možnost Vám ukázat kvalitu své práce.</p>
-            <p class="mb-8">Těším se na osobní setkání.</p>
+          <div class="text-lg text-slate-500 flex flex-col gap-4">
+            <AboutContent headingLevel="h2" />
             <CldImage
               src="signature_bvbjp6"
               width={500}

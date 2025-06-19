@@ -1,5 +1,8 @@
 ---
 import Counter from '@/components/counter.tsx';
+import { getCollection } from 'astro:content';
+
+const about = await getCollection('about');
 
 const stats = [
   {
@@ -19,7 +22,7 @@ const stats = [
       <line x1="8" x2="8" y1="2" y2="6" />
       <line x1="3" x2="21" y1="10" y2="10" />
     </svg>`,
-    number: 12,
+    number: about[0].data.years,
     suffix: '',
     text: 'Let zkušeností',
   },
@@ -38,7 +41,7 @@ const stats = [
       <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
       <polyline points="9 22 9 12 15 12 15 22" />
     </svg>`,
-    number: 260,
+    number: about[0].data.estates,
     suffix: '+',
     text: 'Zobchodovaných nemovitostí',
   },
@@ -58,7 +61,7 @@ const stats = [
       <circle cx="9" cy="7" r="4" />
       <polyline points="16 11 18 13 22 9" />
     </svg>`,
-    number: 500,
+    number: about[0].data.clients,
     suffix: '+',
     text: 'Spokojených klientů',
   },
