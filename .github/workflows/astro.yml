@@ -72,7 +72,7 @@ jobs:
       - name: Deploy to mrecz.github.io
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ env.API_TOKEN_GITHUB }}
+          personal_token: ${{ env.API_TOKEN_GITHUB }}
           publish_dir: ./dist
           external_repository: mrecz/mrecz.github.io
           publish_branch: main
