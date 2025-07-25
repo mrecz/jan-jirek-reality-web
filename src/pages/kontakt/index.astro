@@ -2,8 +2,21 @@
 import Layout from '@/layouts/Layout.astro';
 import ContactForm from '@/components/contactForm.tsx';
 import { Image } from 'astro:assets';
-import Stripes from '@/assets/stripes.svg';
+import Stripes from '@/assets/images/stripes.svg';
 import { CldImage } from 'astro-cloudinary';
+import { render, getEntry } from 'astro:content';
+
+const about = await getEntry('about', 'about');
+if (!about) {
+  throw new Error('About entry not found');
+}
+const { Content: AboutContent } = await render(about);
+
+const terms = await getEntry('terms', 'terms');
+if (!terms) {
+  throw new Error('Terms entry not found');
+}
+const { Content: TermsContent } = await render(terms);
 
 export const metadata = {
   title: 'Ing. Jan Jírek - Kontaktní Formulář',
@@ -60,7 +73,9 @@ export const metadata = {
             </header>
 
             <div class="flex-1 py-8">
-              <ContactForm client:load />
+              <ContactForm client:load termsTitle={terms.data.title}>
+                <TermsContent />
+              </ContactForm>
             </div>
           </div>
         </div>
@@ -108,13 +123,13 @@ export const metadata = {
               </div>
               <figure>
                 <blockquote class="m-0 pb-1 font-bold">
-                  <p>Ing. Jan Jírek</p>
+                  <p>{about.data.name}</p>
                 </blockquote>
-                <figcaption class="text-sm font-medium">Telefon: +420 721 400 777</figcaption>
-                <figcaption class="text-sm font-medium">Email: jirek@janjirek.cz</figcaption>
-                <figcaption class="text-sm font-medium">IČO: 01858734</figcaption>
+                <figcaption class="text-sm font-medium">Telefon: {about.data.phone}</figcaption>
+                <figcaption class="text-sm font-medium">Email: {about.data.email}</figcaption>
+                <figcaption class="text-sm font-medium">IČO: {about.data.ico}</figcaption>
                 <figcaption class="text-sm font-medium">
-                  Oblasti působení: Pardubice a okolí
+                  Oblasti působení: {about.data.area}
                 </figcaption>
               </figure>
             </div>

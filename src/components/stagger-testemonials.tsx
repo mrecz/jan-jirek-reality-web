@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { cn } from '@/components/lib/utils';
 import type { Testemonial } from '@/utils/types';
-import TestemonialBadge from '@/assets/testemonial-badge.png';
+import TestemonialBadge from '@/assets/images/testemonial-badge.png';
 
 const SQRT_5000 = Math.sqrt(5000);
 

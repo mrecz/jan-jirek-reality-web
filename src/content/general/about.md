@@ -1,4 +1,22 @@
 ---
+name: Ing. Jan Jírek
+
+phone: +420 721 400 777
+
+email: jirek@janjirek.cz
+
+ico: 01858734
+
+area: Pardubice, Hradec  Králové a okolí
+
+facebook: https://www.facebook.com/janjirekrealitnimakler
+
+linkedin: https://www.linkedin.com/in/janj%C3%ADrek/
+
+instagram: https://www.instagram.com/jirek.jan/
+
+youtube: https://www.youtube.com/@janjirekreality
+
 years: 12
 
 estates: 260

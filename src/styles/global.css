@@ -6,6 +6,10 @@
 @import './additional-styles/custom-fonts.css' layer(components);
 @import 'tw-animate-css';
 
+@plugin "@tailwindcss/typography" {
+  strategy: base;
+}
+
 @custom-variant dark (&:is(.dark *));
 
 @theme {

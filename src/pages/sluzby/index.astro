@@ -1,16 +1,17 @@
 ---
-import Layout from "@/layouts/Layout.astro";
-import Hero from "./hero.astro";
+import Layout from '@/layouts/Layout.astro';
+import Hero from './hero.astro';
+import Services from '@/components/services.astro';
 
 export const metadata = {
-  title: "Ing. Jan Jírek - Služby",
-  description: "Seznam služeb, které nabízí Ing. Jan Jírek",
+  title: 'Ing. Jan Jírek - Služby',
+  description: 'Seznam služeb, které nabízí Ing. Jan Jírek',
 };
 ---
 
-<Layout 
-  title="Ing. Jan Jírek - Služby"
-  description="Seznam služeb, které nabízí Ing. Jan Jírek"
->
+<Layout title="Ing. Jan Jírek - Služby" description="Seznam služeb, které nabízí Ing. Jan Jírek">
   <Hero />
-</Layout> 
+  <div class="max-w-7xl mx-auto px-4 md:px-12">
+    <Services />
+  </div>
+</Layout>

@@ -75,7 +75,7 @@ const stats = [
     {
       stats.map(stat => (
         <div class="relative text-center md:px-5">
-          <div class="mb-2 flex items-center justify-center text-blue-900" set:html={stat.icon} />
+          <div class="mb-2 flex items-center justify-center text-blue-500" set:html={stat.icon} />
           <h4 class="mb-2 font-cabinet-grotesk text-3xl font-bold tabular-nums md:text-4xl">
             <Counter number={stat.number} client:load />
             {stat.suffix}

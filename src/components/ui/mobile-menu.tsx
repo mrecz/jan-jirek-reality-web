@@ -1,6 +1,4 @@
-"use client";
-
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect } from 'react';
 
 export default function MobileMenu() {
   const [mobileNavOpen, setMobileNavOpen] = useState<boolean>(false);
@@ -20,8 +18,8 @@ export default function MobileMenu() {
         return;
       setMobileNavOpen(false);
     };
-    document.addEventListener("click", clickHandler);
-    return () => document.removeEventListener("click", clickHandler);
+    document.addEventListener('click', clickHandler);
+    return () => document.removeEventListener('click', clickHandler);
   });
 
   // close the mobile menu if the esc key is pressed
@@ -30,8 +28,8 @@ export default function MobileMenu() {
       if (!mobileNavOpen || keyCode !== 27) return;
       setMobileNavOpen(false);
     };
-    document.addEventListener("keydown", keyHandler);
-    return () => document.removeEventListener("keydown", keyHandler);
+    document.addEventListener('keydown', keyHandler);
+    return () => document.removeEventListener('keydown', keyHandler);
   });
 
   return (
@@ -40,7 +38,7 @@ export default function MobileMenu() {
       <button
         ref={trigger}
         className={`group inline-flex h-8 w-8 items-center justify-center bg-white text-center text-gray-800 transition ${
-          mobileNavOpen && "active"
+          mobileNavOpen && 'active'
         }`}
         aria-controls="mobile-nav"
         aria-expanded={mobileNavOpen}
@@ -84,8 +82,8 @@ export default function MobileMenu() {
           id="mobile-nav"
           className={`absolute left-0 top-full z-20 w-full rounded-xl bg-white shadow-lg shadow-black/[0.03] before:pointer-events-none before:absolute before:inset-0 before:rounded-[inherit] before:border before:border-transparent before:[background:linear-gradient(var(--color-gray-100),var(--color-gray-200))_border-box] before:[mask-composite:exclude_!important] before:[mask:linear-gradient(white_0_0)_padding-box,_linear-gradient(white_0_0)] transform transition ease-out duration-200 ${
             mobileNavOpen
-              ? "translate-y-0 opacity-100"
-              : "-translate-y-2 opacity-0 pointer-events-none"
+              ? 'translate-y-0 opacity-100'
+              : '-translate-y-2 opacity-0 pointer-events-none'
           }`}
         >
           <ul className="p-2 text-sm">

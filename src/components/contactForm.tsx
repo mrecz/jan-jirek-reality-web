@@ -1,13 +1,18 @@
-export default function ContactForm() {
+import TermsDialog from './terms-dialog';
+
+interface ContactFormProps {
+  termsTitle: string;
+}
+
+export default function ContactForm({
+  termsTitle,
+  children,
+}: React.PropsWithChildren<ContactFormProps>) {
   return (
     <div data-aos="flip-left">
       <div className="mb-10">
-        <h1 className="mb-2 font-inter text-4xl font-extrabold">
-          Kontaktní Formulář
-        </h1>
-        <div className="text-gray-500">
-          Máte zájem o mé služby? Neváhejte mě kontaktovat!
-        </div>
+        <h1 className="mb-2 font-inter text-4xl font-extrabold">Kontaktní Formulář</h1>
+        <div className="text-gray-500">Máte zájem o mé služby? Neváhejte mě kontaktovat!</div>
       </div>
 
       {/* Form */}
@@ -16,15 +21,11 @@ export default function ContactForm() {
           {/* Group #1 */}
           <div className="py-6">
             <div className="mb-5 text-lg font-bold text-gray-800">
-              <span className="text-blue-500">1.</span> Uveďte Své Kontaktní
-              Údaje
+              <span className="text-blue-500">1.</span> Uveďte Své Kontaktní Údaje
             </div>
             <div className="space-y-4">
               <div>
-                <label
-                  className="mb-1 block text-sm font-medium"
-                  htmlFor="name"
-                >
+                <label className="mb-1 block text-sm font-medium" htmlFor="name">
                   Jméno <span className="text-red-500">*</span>
                 </label>
                 <input
@@ -36,10 +37,7 @@ export default function ContactForm() {
                 />
               </div>
               <div>
-                <label
-                  className="mb-1 block text-sm font-medium"
-                  htmlFor="surname"
-                >
+                <label className="mb-1 block text-sm font-medium" htmlFor="surname">
                   Příjmení <span className="text-red-500">*</span>
                 </label>
                 <input
@@ -51,10 +49,7 @@ export default function ContactForm() {
                 />
               </div>
               <div>
-                <label
-                  className="mb-1 block text-sm font-medium"
-                  htmlFor="email"
-                >
+                <label className="mb-1 block text-sm font-medium" htmlFor="email">
                   Email <span className="text-red-500">*</span>
                 </label>
                 <input
@@ -66,10 +61,7 @@ export default function ContactForm() {
                 />
               </div>
               <div>
-                <label
-                  className="mb-1 block text-sm font-medium"
-                  htmlFor="phone"
-                >
+                <label className="mb-1 block text-sm font-medium" htmlFor="phone">
                   Telefon <span className="text-red-500">*</span>
                 </label>
                 <input
@@ -107,6 +99,12 @@ export default function ContactForm() {
           </div>
         </div>
       </form>
+      <TermsDialog
+        termsTitle={termsTitle}
+        triggerText="Odesláním dotazu souhlasím se zpracováním osobních údajů pouze pro účely zpracování vašeho dotazu."
+      >
+        {children}
+      </TermsDialog>
     </div>
   );
 }

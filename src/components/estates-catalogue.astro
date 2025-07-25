@@ -1,62 +1,18 @@
 ---
-import GagarinovaThumbnail from "@/assets/estates/gagarinova_thumbnail.jpg";
-import JilemnickaThumbnail from "@/assets/estates/jilemnicka_thumbnail.jpg";
-import ZavodumiruThumbnail from "@/assets/estates/zavodumiru_thumbnail.jpg";
-import EstateItem from "./estate-item.astro";
+import EstateItem from './estate-item.astro';
+import { getCollection } from 'astro:content';
 
-type Estate = {
-  title: string;
-  description: string;
-  date: string;
-  price: string;
-  type: "prodej" | "pronajem";
-  status: "aktivni" | "neaktivni";
-  thumbnail: any;
-  location: string;
-  slug: string;
-};
+const entries = await getCollection('catalogue');
 
-const estates: Estate[] = [
-  {
-    title: "Pronájem bytu 3+kk 71 m² Gagarinova, Pardubice - Polabiny",
-    description: "popis",
-    date: "2024-01-01",
-    price: "15.000 Kč",
-    type: "pronajem",
-    status: "aktivni",
-    thumbnail: GagarinovaThumbnail,
-    location: "Pardubice - Polabiny",
-    slug: "gagarinova-pardubice-polabiny",
-  },
-  {
-    title: "Prodej bytu 3+1 – Jilemnického 2217",
-    description: "popis",
-    date: "2024-01-01",
-    price: "4.470.000 Kč",
-    type: "prodej",
-    status: "aktivni",
-    thumbnail: JilemnickaThumbnail,
-    location: "Jilemnického 2217",
-    slug: "jilemnickeho-2217",
-  },
-  {
-    title: "Prodej bytu 2+1, nábřeží Závodu míru",
-    description: "popis",
-    date: "2024-01-01",
-    price: "4.500.000 Kč",
-    type: "prodej",
-    status: "aktivni",
-    thumbnail: ZavodumiruThumbnail,
-    location: "Nábřeží Závodu míru 121",
-    slug: "nabrezie-zavodu-miru-121",
-  },
-];
+const estates = entries.map(entry => {
+  return {
+    ...entry.data,
+  };
+});
 ---
 
 <section class="relative mx-auto mb-8 max-w-7xl">
   <div class="mx-auto grid max-w-sm items-start gap-8 sm:max-w-none sm:grid-cols-2 lg:grid-cols-3">
-    {estates.map((estate) => (
-      <EstateItem estate={estate} isHidden={false} />
-    ))}
+    {estates.map(estate => <EstateItem estate={estate} isHidden={false} />)}
   </div>
-</section> 
+</section>

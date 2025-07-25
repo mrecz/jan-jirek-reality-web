@@ -1,0 +1,20 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import Hero from './hero.astro';
+import { getCollection } from 'astro:content';
+import BlogPosts from '@/components/blog-posts';
+
+export const metadata = {
+  title: 'Ing. Jan Jírek - Blog/Zakázky',
+  description: 'Ing. Jan Jírek - Blog/Zakázky',
+};
+
+const blog = await getCollection('blog');
+---
+
+<Layout title="Ing. Jan Jírek - Blog/Zakázky" description="Ing. Jan Jírek - Blog/Zakázky">
+  <Hero />
+  <div class="mx-auto max-w-6xl px-4 sm:px-6">
+    <BlogPosts posts={blog} postsPerPage={3} client:load />
+  </div>
+</Layout>
