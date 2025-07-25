@@ -28,6 +28,8 @@ env:
   BUILD_PATH: '.' # default value when not using subfolders
   # BUILD_PATH: subfolder
   PUBLIC_CLOUDINARY_CLOUD_NAME: 'dqjdfi1cx'
+  PUBLIC_CLOUDINARY_API_KEY: '654377739775829'
+  CLOUDINARY_API_SECRET: 'Sc9PsGUsiMgFja2nUj1io0GO1TQ'
   API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
 
 jobs:
