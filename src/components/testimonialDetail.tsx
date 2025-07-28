@@ -61,7 +61,7 @@ export default function TestimonialDetail({
 
   return (
     <article
-      className={`relative flex flex-col rounded-2xl bg-gradient-to-br from-slate-900/70 to-slate-900/50 p-5 shadow-lg shadow-black/[0.03] before:pointer-events-none before:absolute before:inset-0 before:rounded-[inherit] before:border before:border-transparent before:[background:linear-gradient(var(--color-gray-100),var(--color-gray-200))_border-box] before:[mask-composite:exclude_!important] before:[mask:linear-gradient(white_0_0)_padding-box,_linear-gradient(white_0_0)] ${className}`}
+      className={`relative flex flex-col rounded-2xl bg-gradient-to-br from-blue-900/70 to-blue-900/50 p-5 shadow-lg shadow-black/[0.03] before:pointer-events-none before:absolute before:inset-0 before:rounded-[inherit] before:border before:border-transparent before:[background:linear-gradient(var(--color-gray-100),var(--color-gray-200))_border-box] before:[mask-composite:exclude_!important] before:[mask:linear-gradient(white_0_0)_padding-box,_linear-gradient(white_0_0)] ${className}`}
       style={rotation ? { transform: `rotate(${rotation}deg)` } : undefined}
     >
       <header className="mb-4 flex flex-col items-center gap-3">
