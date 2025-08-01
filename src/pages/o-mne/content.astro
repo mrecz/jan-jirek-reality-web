@@ -1,7 +1,6 @@
 ---
 import Stats from '@/components/stats-about.astro';
 import { CldImage } from 'astro-cloudinary';
-
 import { render, getEntry } from 'astro:content';
 const about = await getEntry('about', 'about');
 if (!about) {
@@ -36,8 +35,8 @@ const { Content: AboutContent } = await render(about);
             <AboutContent />
             <CldImage
               src="signature_bvbjp6"
-              width={500}
-              height={200}
+              width={268}
+              height={101}
               alt="signature"
               sizes="100vw"
               crop="fill"

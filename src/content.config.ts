@@ -43,13 +43,12 @@ const catalogueCollection = defineCollection({
   loader: glob({ pattern: '**/*.md', base: './src/content/catalogue' }),
   schema: z.object({
     title: z.string(),
-    description: z.string(),
     type: z.string(),
     thumbnail: z.string(),
     location: z.string(),
     slug: z.string(),
     price: z.string(),
-    date: z.string(),
+    date: z.date(),
     mapy_link: z.string(),
     youtube_link: z.string().optional(),
     tags: z.array(z.string()),
@@ -62,9 +61,25 @@ const blogCollection = defineCollection({
   schema: z.object({
     author: z.string(),
     title: z.string(),
+    date: z.date(),
     description: z.string(),
     youtube_link: z.string().optional(),
     slug: z.string(),
+  }),
+});
+
+const contractsCollection = defineCollection({
+  loader: glob({ pattern: '**/*.md', base: './src/content/contracts' }),
+  schema: z.object({
+    author: z.string(),
+    title: z.string(),
+    date: z.date(),
+    description: z.string(),
+    youtube_link: z.string().optional(),
+    slug: z.string(),
+    thumbnail: z.string(),
+    location: z.string(),
+    images: z.array(z.string()).optional(),
   }),
 });
 
@@ -83,4 +98,5 @@ export const collections = {
   blog: blogCollection,
   images: images.assets,
   terms: termsCollection,
+  contracts: contractsCollection,
 };

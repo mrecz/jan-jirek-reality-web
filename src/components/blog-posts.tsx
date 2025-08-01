@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import PostImage from '@/assets/images/undraw_add-files_d04y.svg';
 
 interface BlogPost {
   id: string;
@@ -33,7 +32,7 @@ export default function BlogPosts({ posts, postsPerPage = 3 }: BlogPostsProps) {
   const hasMorePosts = visiblePosts < posts.length;
 
   return (
-    <div className="space-y-10 border-l [border-image:linear-gradient(to_bottom,var(--color-slate-200),var(--color-slate-300),transparent)1] bg-blue-50 rounded-r-2xl p-6">
+    <div className="space-y-10 border-l [border-image:linear-gradient(to_bottom,var(--color-slate-200),var(--color-slate-300),transparent)1] bg-blue-50 rounded-r-2xl p-6 mb-8">
       {posts.slice(0, visiblePosts).map((post, postIndex) => (
         <article key={post.id} className="pl-6 sm:pl-10">
           <header className="mb-2">

@@ -125,11 +125,20 @@ export default function MobileMenu() {
             </li>
             <li>
               <a
-                href="/blog"
+                href="/clanky"
                 className="flex rounded-lg px-2 py-1.5 text-gray-700 hover:bg-gray-100"
                 onClick={() => setMobileNavOpen(false)}
               >
-                Blog/Zakázky
+                Články
+              </a>
+            </li>
+            <li>
+              <a
+                href="/zakazky"
+                className="flex rounded-lg px-2 py-1.5 text-gray-700 hover:bg-gray-100"
+                onClick={() => setMobileNavOpen(false)}
+              >
+                Realizované Zakázky
               </a>
             </li>
             <li>

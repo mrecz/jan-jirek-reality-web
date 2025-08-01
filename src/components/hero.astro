@@ -12,19 +12,19 @@ import PageIllustration from './page-illustration.astro';
   >
   </div>
   <div
-    class="pointer-events-none absolute inset-0 -z-10 rounded-bl-[100px] bg-gray-50 max-w-6xl mx-auto border-double border-4 border-gray-200"
+    class="pointer-events-none absolute inset-0 -z-10 rounded-bl-[100px] bg-gray-50 max-w-7xl mx-auto border-double border-4 border-gray-200"
     aria-hidden="true"
   >
   </div>
   <PageIllustration />
-  <div class="mx-auto max-w-6xl pl-4 sm:pl-6">
+  <div class="mx-auto max-w-7xl pl-4 sm:pl-6">
     <div class="pt-32 md:pt-40">
       <!-- Hero content -->
       <div
         class="relative mx-auto flex max-w-xl flex-col text-center md:max-w-none md:flex-row md:text-left md:items-end"
       >
         <!-- Content -->
-        <div class="md:w-[640px] md:pb-20 pb-12">
+        <div class="md:w-[750px] md:pb-20 pb-12">
           <!-- Copy -->
           <h1 class="h1 font-cabinet-grotesk mb-6">
             Jsem realitní makléř, na kterého se můžete{' '}
@@ -75,14 +75,10 @@ import PageIllustration from './page-illustration.astro';
         <div class="relative self-center md:self-end md:ml-8 lg:ml-16">
           <CldImage
             src="DZF_4387_dzprvn"
-            width={460}
-            height={690}
             alt="Hero Illustration"
-            sizes="100vw"
-            class="relative z-10"
-            crop="fill"
-            gravity="auto"
-            quality="auto"
+            width={800}
+            height={1200}
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 80vw"
           />
         </div>
       </div>

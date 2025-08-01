@@ -1,8 +1,7 @@
 ---
 title: Prodej bytu 3+1 – Jilemnického 2217
-description: kratky popis
 type: prodej
-date: 07.01.2025
+date: 2025-05-31
 tags: [byt, prodej, 3+1, Pardubice]
 thumbnail: _DSC2370_fubbga
 images:
@@ -21,7 +20,10 @@ youtube_link: https://www.youtube.com/embed/qk6rhYXi36U?si=q6i2MeoGsEbx1AYR
 slug: jilemnickeho-2217
 ---
 
-**Škola, školka, obchody, sportovní stadion a skvělá dopravní dostupnost. Co víc si přát?** Snad jen poctivý cihlový byt na dobré adrese. A právě takový na vás čeká na Dukle, v ulici Jilemnického č.p. 2217. Co je na něm zvláštní? Z prostorné dvajedničky se šikovnými úpravami stal byt 3+1. Jednotka se nachází ve zvýšeném přízemí revitalizovaného domu. A díky tomu, že byt je rohový a obklopen zelení, budete zde mít dostatek soukromí.  
+**Škola, školka, obchody, sportovní stadion a skvělá dopravní dostupnost. Co víc si přát?** Snad jen poctivý cihlový byt na dobré adrese. A právě takový na vás čeká na Dukle, v ulici Jilemnického č.p. 2217. Co je na něm zvláštní? Z prostorné dvajedničky se šikovnými úpravami stal byt 3+1. Jednotka se nachází ve zvýšeném přízemí revitalizovaného domu. A díky tomu, že byt je rohový a obklopen zelení, budete zde mít dostatek soukromí.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/k0bbpbhwyBY?si=62lIe3HRIjno_TAM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 ‌  
 Užitná plocha bytu bez sklepa činí 58,05 m². Byt se skládá ze dvou pokojů – prostorného obýváku a rohové ložnice. Třetí místnost vznikla oddělením od kuchyně, sádrokartonovou příčkou. Díky vestavným skříním a přítomnosti okna, sloužila jako plnohodnotný pokoj či pracovna. Benefitem bytu jsou velká okna, čili o dostatek světla tu nebudete mít určitě nouzi. Byt je totiž orientován na jihozápad. V suterénu domu se nachází prostorný sklep o velikosti 6,83 m², kde pohodlně uložíte vše, co je potřeba. Celková plocha bytu činí 64,88 m².  
 ‌  

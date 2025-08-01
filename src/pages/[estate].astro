@@ -63,8 +63,8 @@ const canonicalURL = `https://janjirek.cz/nemovitosti/${entry.data.slug}`;
   image={getCldImageUrl({ src: entry.data.thumbnail, width: 1200, height: 630 })}
   canonicalURL={canonicalURL}
   type="real-estate"
-  publishedTime={entry.data.date}
-  modifiedTime={entry.data.date}
+  publishedTime={entry.data.date.toISOString()}
+  modifiedTime={entry.data.date.toISOString()}
   author="Ing. Jan Jírek"
   section="Nemovitosti"
   tags={entry.data.tags}
@@ -90,8 +90,16 @@ const canonicalURL = `https://janjirek.cz/nemovitosti/${entry.data.slug}`;
                 <div class="flex justify-center md:justify-start mb-5">
                   <ul class="inline-flex flex-col space-y-2">
                     <li class="flex items-center">
-                      <Icon name="mdi:calendar" class="shrink-0 fill-gray-400 mr-3" />
-                      <span class="text-sm text-gray-600">{entry.data.date}</span>
+                      <Icon name="mdi:tag" class="shrink-0 fill-gray-400 mr-3" />
+                      <div class="flex flex-wrap gap-2">
+                        {
+                          entry.data.tags.map((tag: string) => (
+                            <span class="text-xs font-medium text-gray-900 bg-blue-200 rounded-full px-2 py-1">
+                              {tag}
+                            </span>
+                          ))
+                        }
+                      </div>
                     </li>
                     <li class="flex items-center">
                       <Icon name="mdi:map-marker" class="shrink-0 fill-gray-400 mr-3" />
@@ -147,7 +155,7 @@ const canonicalURL = `https://janjirek.cz/nemovitosti/${entry.data.slug}`;
               <h1 class="text-4xl font-extrabold font-inter mb-10">{entry.data.title}</h1>
               {/* Content */}
               <div
-                class="mb-8 prose md:prose-lg prose-headings:font-bold prose-headings:text-gray-900 prose-a:font-medium prose-a:text-blue-500 prose-a:no-underline hover:prose-a:underline prose-blockquote:border-l-2 prose-blockquote:border-gray-300 prose-blockquote:pl-4 prose-blockquote:font-medium prose-blockquote:italic prose-blockquote:text-gray-900 prose-strong:font-bold prose-strong:text-gray-900 prose-code:rounded prose-code:bg-transparent prose-code:px-1 prose-code:py-0.5 prose-code:font-mono prose-code:text-gray-900 prose-code:before:content-[''] prose-code:after:content-[''] prose-pre:border prose-pre:border-gray-700 prose-pre:bg-gray-900 prose-blockquote:xl:-ml-4"
+                class="mb-8 prose md:prose-lg prose-img:rounded-xl prose-img:shadow-lg prose-headings:font-bold prose-headings:text-gray-900 prose-a:font-medium prose-a:text-blue-500 prose-a:no-underline hover:prose-a:underline prose-blockquote:border-l-2 prose-blockquote:border-gray-300 prose-blockquote:pl-4 prose-blockquote:font-medium prose-blockquote:italic prose-blockquote:text-gray-900 prose-strong:font-bold prose-strong:text-gray-900 prose-code:rounded prose-code:bg-transparent prose-code:px-1 prose-code:py-0.5 prose-code:font-mono prose-code:text-gray-900 prose-code:before:content-[''] prose-code:after:content-[''] prose-pre:border prose-pre:border-gray-700 prose-pre:bg-gray-900 prose-blockquote:xl:-ml-4"
               >
                 <Content />
               </div>
@@ -200,6 +208,7 @@ const canonicalURL = `https://janjirek.cz/nemovitosti/${entry.data.slug}`;
             </div>
           </div>
         </div>
+        <hr class="mt-8 mb-14" />
         {/* Virtual tour */}
         <section>
           <div class="mx-auto max-w-6xl px-4 sm:px-6">
@@ -228,16 +237,16 @@ const canonicalURL = `https://janjirek.cz/nemovitosti/${entry.data.slug}`;
                 <h2
                   class="mb-6 border-y text-3xl font-bold text-gray-200 [border-image:linear-gradient(to_right,transparent,--theme(--color-slate-700/.7),transparent)1] md:mb-12 md:text-4xl"
                 >
-                  Virtuální prohlídka
+                  Galerie
                 </h2>
                 <div class="mx-auto max-w-xs sm:flex sm:max-w-none sm:justify-center">
                   <div class="flex flex-col gap-4 w-full">
                     {
                       entry.data.youtube_link && (
-                        <div class="bg-gray-100 rounded-lg p-4 self-center w-[75%]">
+                        <div class="bg-gray-100 rounded-lg p-2 self-center w-[75%] xl:h-[415px] h-[315px]">
                           <iframe
                             width="100%"
-                            height="315"
+                            height="100%"
                             src={entry.data.youtube_link}
                             title="YouTube video player"
                             frameborder="0"
